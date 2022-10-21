@@ -84,27 +84,27 @@ export default {
   name: "app",
 
   components: {
-    HelloWorld,
+    HelloWorld
   },
 
   data: () => ({
-    msg: "Welcome to my Vuex Store",
+    msg: "Welcome to my Vuex Store"
   }), // data
 
   computed: {
     selectedSelOption() {
       return this.$store.state.selectedSelOption;
-    }, //selectedItems()
+    }, // selectedItems()
 
     getOptions() {
-      //return this.$store.state.vehiculos_usuario.vehiculos_usuario;
+      // return this.$store.state.vehiculos_usuario.vehiculos_usuario;
       return this.$store.getters.getSelOptions;
     },
 
     getUsers() {
-      //return this.$store.state.vehiculos_usuario.vehiculos_usuario;
+      // return this.$store.state.vehiculos_usuario.vehiculos_usuario;
       return this.$store.getters.getUsers;
-      //[{ id: "1", nombre: "xxxxx" }];
+      // [{ id: "1", nombre: "xxxxx" }];
     },
     users() {
       return this.$store.state.users;
@@ -112,11 +112,10 @@ export default {
 
     vehiculos_usuario() {
       return this.$store.state.vehiculos_usuario.vehiculos_usuario;
-      //[{ id: "1", nombre: "xxxxx" }];
     },
     selectedItem() {
       return this.$store.state.selectedItem.selectedItem;
-    }, //selectedItems()
+    } // selectedItems()
   },
   methods: {
     //
@@ -128,7 +127,7 @@ export default {
     selectedOption(val) {
       console.log("In app.selectedOption" + JSON.stringify(val));
       this.$store.dispatch("setSelOption", val);
-    }, //
+    } //
   }, // methods
 
   mounted() {
@@ -136,6 +135,6 @@ export default {
     console.log("onMounted !!!");
     this.$store.dispatch("fetchUsers");
     this.$store.dispatch("fetchSelOptions");
-  },
+  }
 }; // default
 </script>

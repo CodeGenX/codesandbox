@@ -61,8 +61,8 @@ export default new Vuex.Store({
     } // SET_SELECTEDOPTIONS
   },
   getters: {
-    getUsers: (state) => state.users,
-    getSelOptions: (state) => state.selOptions
+    getUsers: state => state.users,
+    getSelOptions: state => state.selOptions
   },
   actions: {
     async fetchUsers({ commit }) {
@@ -79,7 +79,9 @@ export default new Vuex.Store({
 
     async fetchSelOptions({ commit }) {
       try {
-        const data = await axios.get("http://localhost:3000/myselectoptions");
+        const data = await axios.get(
+          "https://my-json-server.typicode.com/codegenx/my-json-server/myselectoptions"
+        );
         commit("SET_SELOPTIONS", data.data);
       } catch (error) {
         alert(error);
